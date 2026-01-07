@@ -1,0 +1,63 @@
+site_name: playground
+repo_url: https://github.com/DanJiayi/playground
+site_url: https://DanJiayi.github.io/playground
+site_description: This is a template repository for Pytorch Lightning projects that use uv for their dependency management.
+site_author: Jiayi
+edit_uri: edit/main/docs/
+repo_name: DanJiayi/playground
+copyright: Maintained by <a href="https://DanJiayi.com">DanJiayi</a>.
+
+nav:
+  - Home: index.md
+  - Features:
+      - Setup environment: features/environment.md
+      - Tutorials: features/tutorials.md
+      - Superpowers: features/superpowers.md
+      - Training: features/training.md
+      - Evaluation: features/evaluation.md
+  - API reference: reference/
+plugins:
+  - search
+  - gen-files:
+      scripts:
+      - scripts/gen_ref_nav.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["playground"]
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DanJiayi/playground
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/playground
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
